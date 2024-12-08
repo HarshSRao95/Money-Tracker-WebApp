@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Money Tracker Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form action="/add" method="post">
+        <h1>Money Tracker Web App</h1>
+        <div class="input-section">
+            <div class="labels">
+                <label for="category">Category</label>
+                <select name="category" id="category" required>
+                    <option value="">Select</option>
+                    <option value="Expenses">Expenses</option>
+                    <option value="Income">Income</option>
+                </select>
+
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" min="0" required />
+
+                <label for="info">Information</label>
+                <input type="text" id="info" name="info" required>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <br>
+            <div class="buttons">
+                <button id="addbtn" class="btn">Add Data</button>
+            </div>
+        </div>
+    </form>
+    <div class="expenses-list">
+        <h2>Expenses and Income</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Information</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="expense-table-body">
+
+            </tbody>
+            <tfoot>
+                <td>Balance</td>
+                <td id="total-amount"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tfoot>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
